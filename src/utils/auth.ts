@@ -1,5 +1,15 @@
-import { signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, getAuth, signInWithPopup, GoogleAuthProvider, type NextOrObserver, type User, onAuthStateChanged } from "firebase/auth";
-import { app } from "./firebaseConfig";
+import { 
+  signInWithEmailAndPassword, 
+  createUserWithEmailAndPassword, 
+  signOut,
+  getAuth, 
+  signInWithPopup, 
+  GoogleAuthProvider, 
+  type NextOrObserver, 
+  type User, 
+  onAuthStateChanged 
+} from "firebase/auth";
+import { app } from "../config/firebaseConfig";
 
 const auth = getAuth(app);
 
@@ -13,7 +23,7 @@ export const signUp = async (email: string, password: string) => {
   return await createUserWithEmailAndPassword(auth, email, password)
 }
 
-
+//Google
 export const googleAuth = async () => {
   return await signInWithPopup(auth, new GoogleAuthProvider()).then(response => {
     console.log(response.user.uid)
@@ -22,10 +32,12 @@ export const googleAuth = async () => {
   })
 }
 
+//Cerrar Sesión
 export const logOut = async () => {
   return await signOut(auth)
 }
 
+//Manejar cuando el usuario esta autenticado
 export const onAthStateChange = (callback: NextOrObserver<User>) => {
   return onAuthStateChanged(auth, callback);
 }

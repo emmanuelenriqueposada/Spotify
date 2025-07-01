@@ -5,16 +5,12 @@ import Sidebar from "../../components/layout/SideBar";
 import MusicPlayer from "../../components/music/MusicPlayer";
 import MobileNav from "../../components/layout/MovileNav";
 import MainContent from "../../components/MainContent";
-import { useItemContext } from "../../context/useItemContext";
 
 export default function MainPage() {
-  const { user } = useItemContext();
   const [currentTrack, setCurrentTrack] = useState<Track | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [isMobile, setIsMobile] = useState(false);
-
-  console.log(user);
 
   useEffect(() => {
     const checkMobile = () => {

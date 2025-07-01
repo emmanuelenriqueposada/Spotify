@@ -52,7 +52,7 @@ export async function getFeaturedMusic(): Promise<Track[]> {
   ]
 
   try {
-    const randomQueries = featuredQueries.sort(() => 0.5 - Math.random()).slice(0, 5);
+    const randomQueries = featuredQueries.sort(() => 0.5 - Math.random()).slice(0, 4);
 
     const results = await Promise.all(randomQueries.map(q => searchMusic(q, 10)));
 

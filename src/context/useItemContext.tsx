@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { ItemContext } from "./ItemContext";
 
+// Hook personalizado para acceder al contexto fácilmente
 export const useItemContext = () => {
   const context = useContext(ItemContext);
 

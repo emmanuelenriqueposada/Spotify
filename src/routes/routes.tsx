@@ -1,10 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import NotFound from "../pages/error/NotFound";
-import MainPage from "../pages/home/MainPage";
+import { ProtectedRoute } from "../components/auth/ProtectedRoute";
 import { LoginComponent } from "../components/auth/Login";
 import { RegisterComponent } from "../components/auth/Register";
-import { ProtectedRoute } from "../components/auth/ProtectedRoute";
+import MainPage from "../pages/home/MainPage";
+import NotFound from "../pages/error/NotFound";
 
 export const router = createBrowserRouter([
   {
